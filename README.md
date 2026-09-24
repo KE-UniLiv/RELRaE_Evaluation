@@ -18,6 +18,7 @@ with a local python version of `3.12.4`. Then install the RELRaE framework with
 the following command:
 
 `pip install relrae==0.9.2`
+
 **NOTE: MAKE SURE THE VERSION MATCHES THE ONE USED FOR THE EXPERIMENTS**
 
 Then, to set up the correct repository structure, run the command:
@@ -61,6 +62,13 @@ of RELRaE.
 | **Test Case** | **Expected Response** |
 |-----------|-------------------|
 
+| **Prompt Type** | **Prompt** |
+| ------------- | -------- |
+| Basic | "Does the label `x` accurately describe the relationship<br>between concepts `y` and `z`." |
+| Clear Instructions | |
+| LLM Role | |
+| Domain Context | |
+
 | **Prompt Type** | **Summary of Responses** | **Selected** |
 | ------------- | ---------------------- | ---------- |
 | Basic | | |
@@ -71,7 +79,13 @@ of RELRaE.
 #### Refinement
 
 | **Test Case** | **Expected Response** |
-|-----------|-------------------|
+| ----------- | ------------------- |
+| **Prompt Type** | **Prompt** |
+| ------------- | -------- |
+| Basic | |
+| Clear Instructions | |
+| LLM Role | |
+| Domain Context | |
 
 | **Prompt Type** | **Summary of Responses** | **Selected** |
 | ------------- | ---------------------- | ---------- |
@@ -79,6 +93,16 @@ of RELRaE.
 | Clear Instructions | | |
 | LLM Role | | |
 | Domain Context | | |
+
+## Experiments
+
+### 1.a Rules Set Comparison
+
+### 1.b LLM Refinement Performance
+
+### 2.a Value of Modules
+
+### 2.b Quality of Ontology
 
 ## References
 
