@@ -80,12 +80,13 @@ of RELRaE.
 
 | **Test Case** | **Expected Response** |
 | ----------- | ------------------- |
+
 | **Prompt Type** | **Prompt** |
 | ------------- | -------- |
-| Basic | |
-| Clear Instructions | |
-| LLM Role | |
-| Domain Context | |
+| Basic | "Considering the label `x` was rejected, refine the label describing<br>the relationship between concepts `y` and `z` so it<br>acurately describes the relationship between them." |
+| Clear Instructions | "The label `x` was rejected for being an inaccurate representation<br>of the relationship between concepts `y` and `z` in an ontology.<br>Given this fact, refine the label `x` so that it is a<br>more accurate representation of the relationship. Do NOT repeat the given relationship." |
+| LLM Role | "You are a knowledge engineer building an ontology. The label `x` was<br>rejected for being an inaccurate representation of the relationship between concepts<br>`y` and `z` in an ontology. Given this fact, refine the label `x` so that it is a<br>more accurate representation of the relationship. Do NOT repeat the given label." |
+| Domain Context | "You are a knowledge engineer building an ontology representing the domain of `d`.<br>The label `x` wasrejected for being an inaccurate representation of the relationship between concepts<br>`y` and `z` in an ontology. Given this fact, refine the label `x` so that it is a<br>more accurate representation of the relationship. Do NOT repeat the given label." |
 
 | **Prompt Type** | **Summary of Responses** | **Selected** |
 | ------------- | ---------------------- | ---------- |
