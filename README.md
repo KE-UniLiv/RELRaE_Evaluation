@@ -64,10 +64,10 @@ of RELRaE.
 
 | **Prompt Type** | **Prompt** |
 | ------------- | -------- |
-| Basic | "Does the label `x` accurately describe the relationship<br>between concepts `y` and `z`." |
-| Clear Instructions | |
-| LLM Role | |
-| Domain Context | |
+| Basic | "Does the label `x` accurately describe the relationship<br>between concepts `y` and `z`?" |
+| Clear Instructions | "Within an ontology, does the label `x` accurately<br>describe the relationship between concepts<br>`y` and `z`? Give a 'Yes' or 'No' answer." |
+| LLM Role | "You are a knowledge engineer building an ontology. Within<br>the ontology, does the label `x` accurately<br>describe the relationship between concepts `y` and<br>`z`? Give a 'Yes' or 'No' answer." |
+| Domain Context | "You are a knowledge engineer building an ontology representing<br>the domain of `d`. Within the ontology, does the label<br>`x` accurately describe the relationship between concepts `y` and `z`?<br>Give a 'Yes' or 'No' answer." |
 
 | **Prompt Type** | **Summary of Responses** | **Selected** |
 | ------------- | ---------------------- | ---------- |
