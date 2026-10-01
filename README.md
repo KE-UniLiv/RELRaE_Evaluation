@@ -69,10 +69,10 @@ of RELRaE.
 
 | **Prompt Type** | **Prompt** |
 | ------------- | -------- |
-| Basic | "Does the label `x` accurately describe the relationship<br>between concepts `y` and `z`?" |
-| Clear Instructions | "Within an ontology, does the label `x` accurately<br>describe the relationship between concepts<br>`y` and `z`? Give a 'Yes' or 'No' answer." |
-| LLM Role | "You are a knowledge engineer building an ontology. Within<br>the ontology, does the label `x` accurately<br>describe the relationship between concepts `y` and<br>`z`? Give a 'Yes' or 'No' answer." |
-| Domain Context | "You are a knowledge engineer building an ontology representing<br>the domain of `d`. Within the ontology, does the label<br>`x` accurately describe the relationship between concepts `y` and `z`?<br>Give a 'Yes' or 'No' answer." |
+| Basic | "Does the label `x` accurately describe the relationship between concepts `y` and `z`?" |
+| Clear Instructions | "Within an ontology, does the label `x` accurately describe the relationship between concepts `y` and `z`? Give a 'Yes' or 'No' answer." |
+| LLM Role | "You are a knowledge engineer building an ontology. Within the ontology, does the label `x` accurately describe the relationship between concepts `y` and `z`? Give a 'Yes' or 'No' answer." |
+| Domain Context | "You are a knowledge engineer building an ontology representing the domain of `d`. Within the ontology, does the label `x` accurately describe the relationship between concepts `y` and `z`? Give a 'Yes' or 'No' answer." |
 
 | **Prompt Type** | **Summary of Responses** | **Selected** |
 | ------------- | ---------------------- | ---------- |
@@ -95,10 +95,10 @@ Full results can be found in `\preliminary_experiments\`
 
 | **Prompt Type** | **Prompt** |
 | ------------- | -------- |
-| Basic | "Considering the label `x` was rejected, refine the label describing<br>the relationship between concepts `y` and `z` so it<br>acurately describes the relationship between them." |
-| Clear Instructions | "The label `x` was rejected for being an inaccurate representation<br>of the relationship between concepts `y` and `z` in an ontology.<br>Given this fact, refine the label `x` so that it is a<br>more accurate representation of the relationship. Do NOT repeat the given relationship." |
-| LLM Role | "You are a knowledge engineer building an ontology. The label `x` was<br>rejected for being an inaccurate representation of the relationship between concepts<br>`y` and `z` in an ontology. Given this fact, refine the label `x` so that it is a<br>more accurate representation of the relationship. Do NOT repeat the given label." |
-| Domain Context | "You are a knowledge engineer building an ontology representing the domain of `d`.<br>The label `x` wasrejected for being an inaccurate representation of the relationship between concepts<br>`y` and `z` in an ontology. Given this fact, refine the label `x` so that it is a<br>more accurate representation of the relationship. Do NOT repeat the given label." |
+| Basic | "Considering the label `x` was rejected, refine the label describing the relationship between concepts `y` and `z` so it acurately describes the relationship between them." |
+| Clear Instructions | "The label `x` was rejected for being an inaccurate representation of the relationship between concepts `y` and `z` in an ontology. Given this fact, refine the label `x` so that it is a more accurate representation of the relationship. Do NOT repeat the given relationship." |
+| LLM Role | "You are a knowledge engineer building an ontology. The label `x` was rejected for being an inaccurate representation of the relationship between concepts `y` and `z` in an ontology. Given this fact, refine the label `x` so that it is a more accurate representation of the relationship. Do NOT repeat the given label." |
+| Domain Context | "You are a knowledge engineer building an ontology representing the domain of `d`. The label `x` wasrejected for being an inaccurate representation of the relationship between concepts `y` and `z` in an ontology. Given this fact, refine the label `x` so that it is a more accurate representation of the relationship. Do NOT repeat the given label." |
 
 | **Prompt Type** | **Summary of Responses** | **Selected** |
 | ------------- | ---------------------- | ---------- |
