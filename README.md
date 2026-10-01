@@ -59,8 +59,13 @@ of RELRaE.
 
 #### Evaluation
 
-| **Test Case** | **Expected Response** |
-|-----------|-------------------|
+| **Label** | **Domain** | **Range** | **Context** | **Expected Response** |
+| ----- | ------ | ----- | ------- | ----------------- |
+| hasSample | SampleSet | Sample | Analytical Chemistry | Yes |
+| hasColour | Bird | Animal | Nature/Biology | No |
+| isWrittenBy | Book | Publisher | General Knowledge | No |
+| protects | Bodyguard | VIP | General Knowledge | Yes |
+| partOf | HR Team | Company | Business | Yes |
 
 | **Prompt Type** | **Prompt** |
 | ------------- | -------- |
@@ -76,10 +81,17 @@ of RELRaE.
 | LLM Role | | |
 | Domain Context | | |
 
+Full results can be found in `\preliminary_experiments\`
+
 #### Refinement
 
-| **Test Case** | **Expected Response** |
-| ----------- | ------------------- |
+| **Label** | **Domain** | **Range** | **Context** | **Example Expected Response** |
+| ----- | ------ | ----- | ------- | ------------------------- |
+| hasColour | Bird | Animal | Nature/Biology | isA |
+| isWrittenBy | Book | Publisher | General Knowledge | publishedBy |
+| learnsFrom | Teacher | Student | Education | teaches |
+| locatedNear | Paris | France | Geography | locatedIn |
+| hasPlant | Seed | Plant | Biology/Agriculture | growsInto |
 
 | **Prompt Type** | **Prompt** |
 | ------------- | -------- |
@@ -94,6 +106,8 @@ of RELRaE.
 | Clear Instructions | | |
 | LLM Role | | |
 | Domain Context | | |
+
+Full results can be found in `\preliminary_experiments\`
 
 ## Experiments
 
