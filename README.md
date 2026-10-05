@@ -76,12 +76,12 @@ of RELRaE.
 
 | **Prompt Type** | **Summary of Responses** | **Selected** |
 | ------------- | ---------------------- | ---------- |
-| Basic | | |
-| Clear Instructions | | |
-| LLM Role | | |
-| Domain Context | | |
+| Basic | Correct evaluations but verbose responses on all responses. | ✘ |
+| Clear Instructions | Correct evaluations sometimes ignoring part of the prompt and providing justifications when not asked to. This behaviour is observed in negative cases. | ✘ |
+| LLM Role | Correct evaluations sometimes ignoring part of the prompt and providing justifications when not asked to. This behaviour is observed in negative cases. | ✘ |
+| Domain Context | Correct evaluations and no unrequested jutification. | ✔ |
 
-Full results can be found in `\preliminary_experiments\`
+Full results can be found in `\preliminary_experiments\PA-Prompt_Selection.ods`
 
 #### Refinement
 
@@ -102,12 +102,19 @@ Full results can be found in `\preliminary_experiments\`
 
 | **Prompt Type** | **Summary of Responses** | **Selected** |
 | ------------- | ---------------------- | ---------- |
-| Basic | | |
-| Clear Instructions | | |
-| LLM Role | | |
-| Domain Context | | |
+| Basic | Valid refinements suggested with verbose justification. | ✘ |
+| Clear Instructions | Valid refinements suggested with verbose justification. | ✘ |
+| LLM Role | Valid refinements suggested with verbose justification (on rare cases this is not provided). | ✘ |
+| Domain Context | Valid refinements suggested. In many cases verbose justifications were still provided. | ✔* |
 
-Full results can be found in `\preliminary_experiments\`
+*None of the prompts tested provided consistent acceptable performance for
+generating refined labels. However it was noted that amending the prompts with
+and additional instruction of "Give only the refined label" lead to all prompts
+providing valid refinements in all cases. This knowledge combined with the
+performance of the **Domain Context** prompt in the evaluation stage we select it
+for this task moving forward.
+
+Full results can be found in `\preliminary_experiments\PA-Prompt_Selection.ods`
 
 ## Experiments
 
