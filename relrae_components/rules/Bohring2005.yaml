@@ -1,0 +1,80 @@
+version: 1.0
+prefixes:
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+  xs: "http://www.w3.org/2001/XMLSchema"
+  rdfs: "http://www.w3.org/2000/01/rdf-schema#"
+  rdf:  "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  owl:  "http://www.w3.org/2002/07/owl#"
+  ex:   "http://example.org/"
+
+rules:
+
+  - rule:
+    name: 1a) xsd:element with at least one attribute -> Class and DatatypeProperty
+    element_type: XsdComplexType
+    selector:
+    - pattern: has_attribute
+      attribute: All
+    emit: |
+      f"""
+      {self.prefix}:{self.is_boolean(parts["attribute"])}{self.get_elem_name(parts["attribute"])} a owl:DatatypeProperty ;
+        rdfs:label '{self.is_boolean(parts["attribute"])}{self.get_elem_name(parts["attribute"])}'@en ;
+        rdfs:domain {self.prefix}:{self.get_elem_name(concept)} ;
+        rdfs:range {self.check_datatype(parts["attribute"])} .
+
+      {self.prefix}:{self.get_elem_name(concept)} a owl:Class ;
+        rdfs:label '{self.get_elem_name(concept)}'@en ; .
+      """
+
+  - rule:
+    name: 1b1) complexType and  complex element ref -> ObjectProperty
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_child
+        id: child_1
+        child_type: XsdComplexType
+        relative_depth: 1
+    emit: |
+      f"""
+      {self.prefix}:has{self.get_elem_name(parts["child"])} a owl:ObjectProperty ;
+      rdfs:label 'has{self.get_elem_name(parts["child"])}'@en ;
+        rdfs:domain {self.prefix}:{self.get_elem_name(concept)} ;
+        rdfs:range {self.prefix}:{self.get_elem_name(parts["child"])} .
+
+      {self.prefix}:{self.get_elem_name(concept)} a owl:Class ;
+        rdfs:label '{self.get_elem_name(concept)}'@en ; .
+      """
+
+  - rule:
+    name: 1b2) complexType and simple element ref -> DatatypeProperty
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_child
+        id: child_1
+        child_type: XsdSimpleType
+        relative_depth: 1
+    emit: |
+      f"""
+      {self.prefix}:has{self.get_elem_name(parts["child"])} a owl:ObjectProperty ;
+        rdfs:label 'has{self.get_elem_name(parts["child"])}'@en ;
+        rdfs:domain {self.prefix}:{self.get_elem_name(concept)} ;
+        rdfs:range {self.prefix}:{self.get_elem_name(parts["child"])} .
+      """
+
+  - rule:
+    name: 3) complexType -> Class
+    element_type: XsdComplexType
+    emit: |
+      f"""
+      {self.prefix}:{self.get_elem_name(concept)} a owl:Class ;
+        rdfs:label '{self.get_elem_name(concept)}'@en .
+      """
+
+  - rule:
+    name: 4) simpleType -> DatatypeProperty
+    element_type: XsdSimpleType
+    emit: |
+      f"""
+      {self.prefix}:has{self.get_elem_name(concept)} a owl:DatatypeProperty ;
+        rdfs:label 'has{self.get_elem_name(concept)}'@en .
+      """
