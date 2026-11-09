@@ -1,0 +1,15 @@
+Pipeline
+
+modules: RuBREx
+schema: MINiML.xsd
+namespace: http://www.example.org/minimology/onto#
+prefix: mini
+ontology_name: minimology
+
+
+RuBREx
+
+DEFAULT: <Section: DEFAULT>
+MAIN: <Section: MAIN>
+
+

@@ -1,0 +1,6 @@
+[MAIN]
+modules=RuBREx
+schema=miniml.xsd
+namespace=http://www.example.org/minimology/onto#
+prefix=mini
+ontology_name=minimology

@@ -1,0 +1,15 @@
+Pipeline
+
+modules: RuBREx
+schema: animl-core.xsd
+namespace: http://www.example.org/anitology/onto#
+prefix: ani
+ontology_name: anitology
+
+
+RuBREx
+
+DEFAULT: <Section: DEFAULT>
+MAIN: <Section: MAIN>
+
+

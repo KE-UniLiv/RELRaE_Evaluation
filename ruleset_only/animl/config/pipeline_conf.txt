@@ -1,0 +1,6 @@
+[MAIN]
+modules=RuBREx
+schema=animl-core.xsd
+namespace=http://www.example.org/anitology/onto#
+prefix=ani
+ontology_name=anitology
